@@ -35,11 +35,12 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-	// PUXA O COBBLEMON DA SUA PASTA LIBS E CONECTA A BIBLIOTECA DO KOTLIN
-	modImplementation name: 'Cobblemon-fabric-1.8.1+1.21.1'
-	include name: 'Cobblemon-fabric-1.8.1+1.21.1'
+	// MUDE APENAS ESTAS DUAS LINHAS PARA MODO COMPILE ONLY (OFFLINE SEGURO):
+	modCompileOnly name: 'Cobblemon-fabric-1.8.1+1.21.1'
+	
 	implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.22"
 }
+
 
 processResources {
 	def version = project.version
