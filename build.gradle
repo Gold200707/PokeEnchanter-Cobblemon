@@ -1,0 +1,81 @@
+plugins {
+	id 'fabric-loom' version '1.9-SNAPSHOT' // Suporte total ao Gradle moderno e Java 21
+	id 'maven-publish'
+}
+
+version = project.version
+group = project.group
+
+base {
+	archivesName = "pokeenchanter"
+}
+
+repositories {
+	mavenCentral()
+	maven { name = "FabricMC"; url = "https://fabricmc.net" }
+	
+	// Configura a pasta local 'libs' como o único repositório do Cobblemon
+	flatDir { dirs 'libs' }
+}
+
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"pokeenchanter" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// PUXA O COBBLEMON DA SUA PASTA LIBS E CONECTA A BIBLIOTECA DO KOTLIN
+	modImplementation name: 'Cobblemon-fabric-1.8.1+1.21.1'
+	include name: 'Cobblemon-fabric-1.8.1+1.21.1'
+	implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.22"
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 21
+}
+
+java {
+	withSourcesJar()
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+	def projectName = project.name
+	inputs.property "projectName", projectName
+
+	from("LICENSE") {
+		rename { "${it}_$projectName"}
+	}
+}
+
+publishing {
+	publications {
+		create("mavenJava", MavenPublication) {
+			from components.java
+		}
+	}
+	repositories {
+		mavenCentral()
+	}
+}

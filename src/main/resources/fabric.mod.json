@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "pokeenchanter",
+	"version": "${version}",
+	"name": "PokeEnchanter",
+	"description": "Ganha um encantamento aleatorio em um item aleatorio do inventario ao vencer batalhas no Cobblemon!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net",
+		"sources": "https://github.com"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/pokeenchanter/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"name.modid.PokeEnchanter"
+		],
+		"client": [
+			"name.modid.client.PokeEnchanterClient"
+		]
+	},
+	"mixins": [
+		"pokeenchanter.mixins.json",
+		{
+			"config": "pokeenchanter.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*",
+		"cobblemon": ">=1.0.0"
+	}
+}
