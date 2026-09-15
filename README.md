@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="src/main/resources/assets/pokeenchanter/icon.png" width="256" height="256" alt="PokeEnchanter Logo">
+</div>
+
 # 🔮 PokeEnchanter-Cobblemon
 
 > [!NOTE]
