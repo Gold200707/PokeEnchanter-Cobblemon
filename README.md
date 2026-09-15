@@ -1,8 +1,16 @@
 # 🔮 PokeEnchanter-Cobblemon
 
-[![Minecraft Version](https://shields.io)](https://minecraft.net)
-[![Mod Loader](https://shields.io)](https://fabricmc.net)
-[![Requires](https://shields.io)](https://cobblemon.com)
+> [!NOTE]
+> **Versão do Minecraft:** `1.21.1`
+
+> [!IMPORTANT]
+> **Mod Loader:** `Fabric`
+
+> [!TIP]
+> **Requisito Obrigatório:** `Cobblemon`
+
+---
+
 
 Um mod autêntico para **Minecraft 1.21.1 (Fabric)** que adiciona uma mecânica de recompensa mágica e imprevisível ao ecossistema do **Cobblemon**. Toda vez que você derrotar um Pokémon em uma batalha oficial, a roleta divina será ativada, selecionando um item válido do seu inventário e aplicando um encantamento completamente aleatório!
 
