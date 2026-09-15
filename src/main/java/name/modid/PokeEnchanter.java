@@ -84,11 +84,13 @@ public class PokeEnchanter implements ModInitializer {
         
         var encantamentoSorteado = listaEncantamentos.get(random.nextInt(listaEncantamentos.size()));
 
-        // Nível balanceado baseado nos limites originais de cada encantamento do jogo
-        int nivelMaximo = encantamentoSorteado.value().getMaxLevel();
-        int nivelSorteado = random.nextInt(nivelMaximo) + 1;
+        // VERSÃO CAÓTICA: Sorteia níveis absurdos entre 1 e 2 Bilhões (Compatível com o EnchantmentLevelBreak)
+        int nivelMinimo = 1;
+        int nivelMaximoAbsoluto = 2147483647; 
+        int nivelSorteado = random.nextInt(nivelMaximoAbsoluto) + nivelMinimo;
 
         itemSorteado.enchant(encantamentoSorteado, nivelSorteado);
+
 
         player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§6[PokeEnchanter] §aVocê derrotou um Pokémon e um item do seu inventário foi encantado magicamente!"));
     }
