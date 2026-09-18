@@ -1,78 +1,106 @@
 <div align="center">
-  <img src="src/main/resources/assets/pokeenchanter/icon.png" width="256" height="256" alt="PokeEnchanter Logo">
+  <img src="src/main/resources/assets/pokeenchanter/icon.png" width="180" height="180" alt="PokeEnchanter Logo">
+
+  # PokeEnchanter-Cobblemon
+
+  [![Minecraft](https://img.shields.io/badge/Minecraft-1.21.1-107C41?style=for-the-badge&logo=minecraft&logoColor=white)](https://minecraft.net)
+  [![Mod Loader](https://img.shields.io/badge/Mod_Loader-Fabric-1B1A1E?style=for-the-badge&logo=fabric&logoColor=white)](https://fabricmc.net)
+  [![Requirement](https://img.shields.io/badge/Requisito-Cobblemon-EE3E3D?style=for-the-badge)](https://cobblemon.com)
+  [![License](https://img.shields.io/badge/Licen%C3%A7a-CC0--1.0-blue?style=for-the-badge)](https://creativecommons.org/publicdomain/zero/1.0/)
+
+  *Uma mecânica de recompensa mágica e imprevisível integrada ao ecossistema Cobblemon.*
+
 </div>
 
-# 🔮 PokeEnchanter-Cobblemon
+---
 
-> [!NOTE]
-> **Versão do Minecraft:** `1.21.1`
+## Índice
 
-> [!IMPORTANT]
-> **Mod Loader:** `Fabric`
-
-> [!TIP]
-> **Requisito Obrigatório:** `Cobblemon`
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Comparativo de Versões](#comparativo-de-versões-branches)
+- [Mods Recomendados](#mods-recomendados-combo-caótico)
+- [Instruções de Compilação](#instruções-de-compilação)
+- [Instalação e Uso](#instalação-e-uso)
+- [Licença](#licença)
 
 ---
 
-Um mod autêntico para **Minecraft 1.21.1 (Fabric)** que adiciona uma mecânica de recompensa mágica e imprevisível ao ecossistema do **Cobblemon**. Toda vez que você derrotar um Pokémon em uma batalha oficial, a roleta divina será ativada, selecionando um item válido do seu inventário e aplicando um encantamento completamente aleatório!
+## Sobre o Projeto
+
+O **PokeEnchanter-Cobblemon** é um mod desenvolvido para **Minecraft 1.21.1 (Fabric)** que introduz um sistema dinâmico de sorteio e encantamento ao ecossistema do Cobblemon. 
+
+Ao derrotar um Pokémon em uma batalha oficial, o sistema ativa uma roleta aleatória que seleciona um item válido no inventário do jogador e aplica um encantamento sorteado no momento da vitória.
 
 ---
 
-## 🌿 Escolha a sua Versão (Branches)
+## Comparativo de Versões (Branches)
 
-Este projeto foi estruturado de forma profissional e possui duas ramificações independentes na aba de branches do GitHub. Escolha a que melhor se adapta ao seu estilo de jogo:
+O repositório está dividido em duas ramificações principais com regras e mecânicas distintas. Escolha a versão adequada ao seu perfil de jogo:
 
-### 1. Versão Balanceada (`main`)
-* **O que faz:** Respeita rigorosamente os limites nativos do Minecraft Vanilla (ex: sorteia Sharpness do nível I ao V, ou Mending I).
-* **Indicado para:** Gameplay de sobrevivência tradicional, servidores survival dedicados e modpacks balanceados.
-
-### 2. Versão Caótica (`levelbreak`)
-* **O que faz:** Remove todas as amarras de nível do Java, permitindo que a roleta sorteie e aplique encantamentos absurdos que vão **do nível 1 até o limite de 2 Bilhões (2.147.483.647)**.
-* **Indicado para:** Diversão pura, testes extremos e mapas focados em apelação total.
+| Ramificação | Foco de Gameplay | Comportamento de Encantamento | Uso Recomendado |
+| :--- | :--- | :--- | :--- |
+| **`main`** | **Balanceada** | Respeita estritamente os limites padrão do Minecraft Vanilla (ex: Afiação I–V, Remendo I). | Servidores de sobrevivência, modpacks equilibrados e estilo vanilla+. |
+| **`levelbreak`** | **Caótica** | Isenta de limites do Java, aplicando encantamentos de **nível 1 até 2.147.483.647**. | Testes de desempenho, mapas casuais e modos de jogo focados em poder extremo. |
 
 ---
 
-## ⚡ O Combo Perfeito (Mods Recomendados)
+## Mods Recomendados (Combo Caótico)
 
-Se você optar por jogar na versão **Caótica (`levelbreak`)**, é altamente recomendado colocar estes mods adicionais (disponíveis para Fabric 1.21.1 no CurseForge) na sua pasta de jogos para abrir a porteira do caos na bigorna:
+Para a melhor experiência na versão **`levelbreak`**, recomenda-se a utilização combinada dos seguintes mods Fabric (disponíveis no CurseForge e Modrinth):
 
-* **EnchantmentLevelBreak:** Obrigatório para fazer o Minecraft aceitar e processar os níveis acima de 5 sem rebaixar o item ou quebrar os atributos.
-* **Fixed Anvil Repair Cost:** Remove o limite oculto de uso da bigorna, congelando o custo de experiência e impedindo que o jogo exiba o aviso de "Muito Caro!". Permite modificar o mesmo item infinitas vezes.
-* **Universal Enchants:** Altera as regras de restrição do jogo, permitindo que encantamentos de arco funcionem em espadas ou picaretas, tornando a gameplay totalmente imprevisível.
-* **Enchantment Descriptions:** Adiciona uma janela de texto explicativa abaixo de cada item para você entender o que as novas magias desconhecidas fazem.
+| Mod | Função e Necessidade |
+| :--- | :--- |
+| **EnchantmentLevelBreak** | **Obrigatório.** Permite que o jogo processe níveis de encantamento superiores a V sem redefinir atributos. |
+| **Fixed Anvil Repair Cost** | **Recomendado.** Remove o limite de custo de experiência na bigorna, prevenindo a mensagem "Muito Caro!". |
+| **Universal Enchants** | **Recomendado.** Flexibiliza restrições de encantamentos entre categorias de itens diferentes (ex: arcos em espadas). |
+| **Enchantment Descriptions** | **Opcional.** Exibe descrições informativas sobre os atributos de cada encantamento na interface do item. |
 
 ---
 
-## 🚀 Como Compilar o Mod do Zero
+## Instruções de Compilação
 
-Se você quiser clonar este repositório e gerar o arquivo `.jar` no seu computador utilizando o VS Code, certifique-se de ter o **JDK 21** instalado e siga os comandos abaixo no terminal:
+Para clonar o repositório e compilar o projeto localmente gerando o artefato `.jar`, certifique-se de possuir o **JDK 21** instalado e configurado no ambiente.
 
+### 1. Seleção de Branch
 ```bash
-# 1. Escolha a ramificação desejada
-git checkout main         # Para a versão balanceada
-# OU
-git checkout levelbreak   # Para a versão caótica
+# Para a versão balanceada:
+git checkout main
 
-# 2. Limpe os caches e compile o projeto
-.\gradlew clean build
+# Para a versão caótica:
+git checkout levelbreak
 ```
 
-O arquivo compilado final estará pronto para uso dentro do diretório:
-📁 `build/libs/pokeenchanter-1.0.0.jar`
+### 2. Compilação via Gradle
+
+**Windows (PowerShell ou CMD):**
+```cmd
+.\gradlew.bat clean build
+```
+
+**Linux / macOS:**
+```bash
+./gradlew clean build
+```
+
+O arquivo final `.jar` será gerado no seguinte diretório:
+```text
+build/libs/pokeenchanter-1.0.0.jar
+```
 
 ---
 
-## 🎮 Como Instalar e Jogar
+## Instalação e Uso
 
-1. Baixe ou compile o arquivo `.jar` correspondente à versão desejada.
-2. Certifique-se de ter o **Fabric API** e o **Cobblemon** instalados na sua pasta de mods.
-3. Copie o arquivo `pokeenchanter-1.0.0.jar` e cole-o no diretório:
-   `%appdata%\.minecraft\mods`
-4. Inicie o jogo pelo launcher no perfil do Fabric 1.21.1 e divirta-se!
+1. Faça o download do artefato `.jar` já compilado na seção de **Releases** ou compile-o manualmente.
+2. Certifique-se de que o **Fabric API** e o **Cobblemon** estejam presentes na pasta de mods do jogo.
+3. Copie o arquivo `pokeenchanter-1.0.0.jar` para o diretório de mods correspondente ao seu sistema operacional:
+   - **Windows:** `%appdata%\.minecraft\mods`
+   - **Linux:** `~/.minecraft/mods`
+   - **macOS:** `~/Library/Application Support/minecraft/mods`
+4. Inicie o cliente no perfil Fabric referente à versão `1.21.1`.
 
 ---
 
-## 🪪 Licença
+## Licença
 
-Este projeto está sob a licença **CC0-1.0 (Domínio Público)**. Você é totalmente livre para usar, modificar, distribuir ou adicionar este código em seus próprios modpacks sem restrições!
+Este projeto está licenciado sob os termos da [CC0-1.0 Universal (Domínio Público)](https://creativecommons.org/publicdomain/zero/1.0/). Você possui total liberdade para utilizar, modificar e redistribuir este código fonte em modpacks ou projetos derivados sem restrições.
