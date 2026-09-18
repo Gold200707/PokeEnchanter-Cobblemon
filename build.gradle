@@ -12,10 +12,8 @@ base {
 
 repositories {
 	mavenCentral()
-	maven { name = "FabricMC"; url = "https://fabricmc.net" }
-	
-	// Configura a pasta local 'libs' como o único repositório do Cobblemon
-	flatDir { dirs 'libs' }
+	maven { name = "FabricMC"; url = "https://maven.fabricmc.net/" }
+	maven { url = "https://api.modrinth.com/maven" }
 }
 
 loom {
@@ -35,8 +33,7 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-	// MUDE APENAS ESTAS DUAS LINHAS PARA MODO COMPILE ONLY (OFFLINE SEGURO):
-	modCompileOnly name: 'Cobblemon-fabric-1.8.1+1.21.1'
+	modCompileOnly "maven.modrinth:MdwFAVRL:gBW3vLC7"
 	
 	implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.22"
 }
