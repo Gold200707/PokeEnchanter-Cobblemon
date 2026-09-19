@@ -91,7 +91,18 @@ public class PokeEnchanter implements ModInitializer {
 
         itemSorteado.enchant(encantamentoSorteado, nivelSorteado);
 
+        // Toca o som clássico de "Plim!" de level up na posição exata do jogador
+        player.level().playSound(
+            null, 
+            player.getX(), 
+            player.getY(), 
+            player.getZ(), 
+            net.minecraft.sounds.SoundEvents.PLAYER_LEVELUP, 
+            net.minecraft.sounds.SoundSource.PLAYERS, 
+            1.0F, // Volume máximo
+            1.0F  // Tom normal do som
+        );
 
-        player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§6[PokeEnchanter] §aVocê derrotou um Pokémon e um item do seu inventário foi encantado magicamente!"));
+        player.sendSystemMessage(net.minecraft.network.chat.Component.translatable("text.pokeenchanter.reward"));
     }
 }
