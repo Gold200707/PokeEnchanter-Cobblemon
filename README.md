@@ -33,6 +33,18 @@ Ao derrotar um Pokémon em uma batalha oficial, o sistema ativa uma roleta aleat
 
 ---
 
+## Critical Performance Note (Anti-Crash)
+
+> [!IMPORTANT]
+> As of **Version 1.2.0+**, the maximum enchantment limit for the Chaotic Edition is hard-capped at **255**.
+
+### Technical Context
+Minecraft's internal physics and calculation engines (specifically for attributes like **Knockback**, **Punch**, and **Sharpness**) cannot process enchantment levels in the millions during combat calculations. Attacking an entity with extreme values forces the server into an unrecoverable processing loop, triggering a `java.lang.ArithmeticException` or `java.lang.OutOfMemoryError: Java heap space` crash.
+
+Capping all chaotic random enchantments at **255** maintains an overpowered gameplay experience while ensuring complete server stability and zero memory exhaustion.
+
+---
+
 ## Comparativo de Versões (Branches)
 
 O repositório está dividido em duas ramificações principais com regras e mecânicas distintas. Escolha a versão adequada ao seu perfil de jogo:
