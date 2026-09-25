@@ -84,10 +84,9 @@ public class PokeEnchanter implements ModInitializer {
         
         var encantamentoSorteado = listaEncantamentos.get(random.nextInt(listaEncantamentos.size()));
 
-        // VERSÃO CAÓTICA: Sorteia níveis absurdos entre 1 e 2 Bilhões (Compatível com o EnchantmentLevelBreak)
-        int nivelMinimo = 1;
-        int nivelMaximoAbsoluto = 2147483647; 
-        int nivelSorteado = random.nextInt(nivelMaximoAbsoluto) + nivelMinimo;
+         // VERSÃO CAÓTICA PROTEGIDA (v1.2.0): Sorteia níveis estáveis entre 1 e 255
+        // Evita estouros de memória (Java Heap Space) provocados por loops de física nativos do jogo
+        int nivelSorteado = random.nextInt(255) + 1;
 
         itemSorteado.enchant(encantamentoSorteado, nivelSorteado);
 
